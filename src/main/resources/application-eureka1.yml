@@ -4,7 +4,10 @@ server:
 eureka:
   instance:
     hostname: eureka-server-1
+    leaseRenewalIntervalInSeconds: 5
+    leaseExpirationDurationInSeconds: 10
   client:  
     fetchRegistry: true
+    registerWithEureka: true
     serviceUrl:
       defaultZone: http://eureka-server-2:8762/eureka/,http://eureka-server-3:8763/eureka/
